@@ -35,3 +35,6 @@ run_re(re_ex, phone_list)
 re_ex = "^\(?01\s?[2-6]\s?1\)?\s?([0-9]|\s){3,5}([0-9]|\s){4,7}$"
 run_re(re_ex, phone_list)
 
+re_ex = "^\(?01\s?[2-6]\s?1\)?\s?(\d|\s){3,5}(\d|\s){4,7}$"
+run_re(re_ex, phone_list)
+
