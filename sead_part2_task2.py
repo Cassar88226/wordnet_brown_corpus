@@ -59,6 +59,11 @@ def find_most_before_words(before_pos, after_pos, keyword, number, reverse=False
     # sort by frequency
     freq_list = sorted(freq_list, key=lambda x: x[0], reverse=True)[0:max_len]
     return freq_list
+# (a) asks the user to enter a word and identifies all its occurrences in the Brown corpus 
+# where it is used as a noun. Display how many times the word appears as a noun in the Brown corpus.
+
+freqs = nltk.FreqDist(w.lower() for w, pos in brown.tagged_words() if w == keyword and pos.startswith('NN'))
+print("Frequency of ", keyword ," : ", freqs.N())
 
 # (b) & (d) finds which adjective appears the most often immediately before the given noun. Display the frequency of this adjective. 
 most_adjective_list = find_most_before_words('JJ', 'NN', keyword, number)
