@@ -12,7 +12,7 @@ try:
     number = int(number)
     if number < 1:
         number = 1
-except:
+except ValueError e:
     number = 1
 # get tagged words from brown corpus
 brown_tagged = brown.tagged_words()

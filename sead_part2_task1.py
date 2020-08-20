@@ -40,10 +40,13 @@ if len(brown_keyword_tokens):
         sense_index = int(sense_index)
         if sense_index < 1 or sense_index > len(senses_list):
             print("Please input the valid sense number")
-    except:
+            exit(0)
+    except ValueError as e:
         print("Please input the correct sense number as a integer")
+        exit(0)
 else:
     print("Keyword :", keyword, " doesn't appear as a noun in the Brown Corpus")
+    exit(0)
 
 # •	Displays the frequency of the keyword in the Brown corpus and of all the synonyms of the keyword for the selected sense. 
 # In all the cases, only the occurrences as nouns should be counted. 
