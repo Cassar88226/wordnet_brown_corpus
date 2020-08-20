@@ -50,6 +50,7 @@ else:
 # For this step ignore the synonyms that are multi-word expressions.
 
 # get all synonyms of the keyword for selected sense 
+print("The frequencies of the keyword and it synonyms for sense {}".format(sense_index))
 selected_sense = senses_list[sense_index - 1]
 for lemma in selected_sense.lemmas():
     # only the occurrences as nouns should be counted
