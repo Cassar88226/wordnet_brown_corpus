@@ -5,7 +5,7 @@
 
 import nltk
 from nltk.corpus import wordnet as wn
-
+import sys
 # get keyword
 keyword = input("Enter a word: ")
 # get Noun synsets from wordnet 
@@ -14,7 +14,7 @@ keyword_synsets = wn.synsets(keyword, pos=wn.NOUN)
 # check if keyword does not appear in WordNet as noun
 if not keyword_synsets:
     print("keyword :", keyword, " is not a Noun")
-    exit(0)
+    sys.exit()
 
 # display Sense list
 senses_list = []
@@ -40,13 +40,13 @@ if len(brown_keyword_tokens):
         sense_index = int(sense_index)
         if sense_index < 1 or sense_index > len(senses_list):
             print("Please input the valid sense number")
-            exit(0)
+            sys.exit()
     except ValueError as e:
         print("Please input the correct sense number as a integer")
-        exit(0)
+        sys.exit()
 else:
     print("Keyword :", keyword, " doesn't appear as a noun in the Brown Corpus")
-    exit(0)
+    sys.exit()
 
 # •	Displays the frequency of the keyword in the Brown corpus and of all the synonyms of the keyword for the selected sense. 
 # In all the cases, only the occurrences as nouns should be counted. 
